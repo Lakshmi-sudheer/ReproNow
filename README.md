@@ -8,7 +8,8 @@ This is a browser extension to capture Desktop and Network Traffic
 - Export requests as cURL
 - Store history in Local Storage-
 
-Options Explained:
+**Options Explained:**
+ 
     1. Capture network of active and navigated Tabs(Default)
        This option enables the tool to capture the network of the current tab and all the other tabs you navigate to. 
    
