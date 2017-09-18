@@ -1,0 +1,92 @@
+
+<html>
+
+  <head>
+<link rel="stylesheet" href="bootstrap.min.css" >
+<script src="jquery-3.2.1.js"></script>
+<!--link rel="stylesheet" type="text/css" href="jquery-ui.min.css"-->
+<script src="popper.min.js"></script>
+<script src="bootstrap.min.js"></script>
+<!--script src="jquery-ui.min.js"></script-->
+<link rel="stylesheet" type="text/css" href="timeline.css">
+<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <style type="text/css">
+      #terminal {
+        background: #fff;
+        color: #000;
+        font-family: "Lucida Console", "Lucida Sans Typewriter", Monaco, "Bitstream Vera Sans Mono", monospace;
+        font-weight: lighter;
+        border: solid 1px;
+      }
+      .terminal-top-bar {
+        background: rgb(233, 233, 233);
+        height: 14px;
+        font-size: 12px;
+        line-height: 14px;
+        margin-top: -30px;
+        margin-left: -11px;
+        margin-right: -11px;
+        padding: 3px;
+        text-align: center;
+        color: rgb(92, 92, 92);
+        border: solid 1px;
+        border-radius: 2px 2px 0 0;
+      }
+      .terminal-header {
+        padding-top: 15px;
+      }
+      #input {
+        width: 80%;
+        padding: 4px;
+      }
+      #run {
+        width: 15%
+      }
+      #output {
+        white-space: pre-wrap;
+        padding-left:50px;
+        height: 60%;
+        word-break: break-all;
+      }
+      #output.closed {
+        height: 200px;
+        overflow-y: scroll;
+      }
+      #files {
+        text-align: center;
+      }
+      #files img {
+        max-width: 80%;
+      }
+      .sample-commands {
+        text-align: center;
+      }
+      .hidden{
+      	visibility: hidden;
+      }
+    </style>
+
+  </head>
+
+  <body>
+  	<center>
+    <div id="inputFiles" class="hidden">
+    	<label for="videoFile">Select or drop a video file</label>
+    	<input type="file" name="videoFile" id="videoFile" >
+    </div>
+    <div id="dataloading">
+
+			<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+			<span class="sr-only">Loading...</span>
+    <div>
+  	</center>
+  	<br/>
+    <div id="terminal">
+   	<div class="terminal-header">
+    <pre id="output"></pre>
+    	
+    </div>
+  </body>
+</html>
+<script src="ffmpeg.js"></script>
+<script src="download_manual.js"></script>

@@ -1,0 +1,134 @@
+<link rel="stylesheet" href="bootstrap.min.css" >
+<script src="jquery-3.2.1.slim.min.js"></script>
+<script src="popper.min.js"></script>
+<script src="bootstrap.min.js"></script>
+<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+
+<style type="text/css">
+.navbar{
+	display:block;
+}
+.card{
+	width:300px;
+	height:350px;
+	overflow-y:auto;
+}
+.card-block{
+	text-align: center;
+	padding-top:5%;
+}
+.form{
+	padding-left:10%;
+	padding-top:5%;
+	font-size: 14px;
+	display:block;
+}
+.textbox{
+	width:90%;
+	font-size: 14px;
+	line-height: 1;
+}
+.hidebutton{
+	display: none;
+}
+.TextBoxName{
+	padding-right:5%;
+}
+.selectOption{
+	width:90%;
+}
+.bottomBar{
+	cursor: pointer;
+	float: bottom;
+	bottom: 0px;
+	position: absolute;
+	width:150px;
+	margin-bottom: 0;
+    border-bottom-right-radius: 0rem; 
+    border-bottom-left-radius: .25rem; 
+}
+.topBar{
+	cursor: pointer;
+	float: top;
+	top: 0px;
+	position: relative;
+}
+.pointer{
+	cursor: pointer;
+}
+.buttongp{
+	padding-top:10px;
+	padding-bottom:0px;
+}
+.list-group-item{
+	padding-left:0.75rem;
+	padding-right:0.75rem;
+}
+.actionButton{
+	margin-bottom:0px;
+	margin-right:10px;
+	line-height: 1.5;
+}
+.buttonIcons{
+	line-height: 1.0;
+}
+.videoName{
+	font-size: 14px;
+}
+.setright{
+	right: 0px;
+}
+</style>
+<div class="card">
+<nav class="navbar navbar-inverse"> <!--bg-primary-->
+  <!--div style="color:white;">ReproNow</div-->
+  <!--div class="navbar-brand" align="center"-->
+  <center>
+    <img src="Complete_Logo.png" height="14" alt="">
+ </center>
+</nav>
+<div class="mainPage">
+<div class="card-block">
+    <button type="button" id="start" class="btn btn-success">
+     <span class="fa fa-video-camera" aria-hidden="true"></span> Start Recording
+     </button>
+    <button type="button" id="stop" class="btn btn-danger hidebutton">
+     <span class="fa fa-video-camera" aria-hidden="true"></span> Stop Recording
+     </button>
+ </div>
+ <form>
+     <div class="form">
+     <div class="form-group">
+	    <label for="recName" class="TextBoxName" >Name </label>
+	    <input type="text" class="form-control textbox" id="recName" value="Record_1243">
+  	</div>
+  	<div class="form-group selectOption">
+  		<label for="SelectedOption" class="TextBoxName" >Option</label>
+  		<select class="custom-select" id="SelectedOption">
+		  <option selected value="ActiveAndNavigated">Capture network of active tab and navigated tabs</option>
+		  <option value="OnlyActive">Capture network of most recent activated tab</option>
+		  <option value="OnlySelected">Capture network of only current tab [URL bar won't be shown]</option>
+		  <option value="AllTabs">Capture network of all tabs</option>
+		</select>
+  	</div>
+     
+    
+    </div>
+    <!--div class="bg-faded list-group-item list-group-item-action bottomBar"><div style="text-align: center;">View History <i class="fa fa-history fa-2" aria-hidden="true"></i></div-->
+    
+	<div class="bg-faded list-group-item list-group-item-action bottomBar historyBut"><div style="text-align: center;">History <i class="fa fa-history fa-2" aria-hidden="true"></i></div>
+	</div>
+	<div class="bg-faded list-group-item list-group-item-action bottomBar setright uploadBut"><div style="text-align: center;">Previewer <i class="fa fa-eye fa-2" aria-hidden="true"></i></div>
+	
+	</div>
+</form>
+</div>
+<div class="secondPage"  style="display:none">
+	<div class="bg-faded list-group-item list-group-item-action topBar"><div style="text-align: center;"><i class="fa fa-undo fa-2" aria-hidden="true"></i> Back</div>
+	</div>
+	<div id="listgrp" class="list-group">
+
+	</div>
+</div>
+</div>
+<script src="popup.js"></script>
