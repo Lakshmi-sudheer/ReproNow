@@ -23,7 +23,6 @@ An open source tool to capture screen and network instantly helping security eng
     4. Capture of all tabs
        This option enables the tool to capture network of all the tabs in the browser. 
     
----
 ## Installation
 
 **Chrome**: 
@@ -42,7 +41,10 @@ How to manually Install in Chrome/Opera?
 **Firefox:**
 On Roadmap. Waiting for a [bug](https://bugzilla.mozilla.org/show_bug.cgi?id=1394062) to be fixed by Firefox team.
 
----
+## DEMO
+
+1. Go to https://repro-now.com/previewer/
+2. Click on "Load Demo Video"
 
 ## References
 * How to build Chrome Extension: https://developer.chrome.com/extensions/getstarted
