@@ -39,4 +39,10 @@ How to manually Install in Chrome/Opera?
 **Firefox:**
 On Roadmap. Waiting for a [bug](https://bugzilla.mozilla.org/show_bug.cgi?id=1394062) to be fixed by Firefox team.
 
-
+__References:__
+* How to build Chrome Extension: https://developer.chrome.com/extensions/getstarted
+* FFmpeg.js for client side video conversion: https://github.com/Kagami/ffmpeg.js
+* ts-ebml for MKV manipulation: https://github.com/legokichi/ts-ebml
+* Browserify for converting node modules to work on browser: http://browserify.org/
+* Ideas for web apps with FFMPEG and ffmpeg.js - Paul Kinlan: https://paul.kinlan.me/ffmpeg-ideas/
+* Videoconvertor.js for showing demo of ffmpeg.js: https://github.com/bgrins/videoconverter.js
