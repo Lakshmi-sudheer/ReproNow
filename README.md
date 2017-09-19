@@ -41,7 +41,7 @@ How to manually Install in Chrome/Opera?
 **Firefox:**
 On Roadmap. Waiting for a [bug](https://bugzilla.mozilla.org/show_bug.cgi?id=1394062) to be fixed by Firefox team.
 
-## DEMO
+## Demo
 
 1. Go to https://repro-now.com/previewer/
 2. Click on "Load Demo Video"
