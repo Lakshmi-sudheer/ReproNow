@@ -23,7 +23,8 @@ An open source tool to capture screen and network instantly helping security eng
     4. Capture of all tabs
        This option enables the tool to capture network of all the tabs in the browser. 
     
-__Installation:__
+---
+## Installation
 
 **Chrome**: 
 [Install it directly from the Chrome Store](https://chrome.google.com/webstore/detail/repronow/bgnboagkkokloclccjpmamhfijeinnpc)
@@ -41,7 +42,9 @@ How to manually Install in Chrome/Opera?
 **Firefox:**
 On Roadmap. Waiting for a [bug](https://bugzilla.mozilla.org/show_bug.cgi?id=1394062) to be fixed by Firefox team.
 
-__References:__
+---
+
+## References
 * How to build Chrome Extension: https://developer.chrome.com/extensions/getstarted
 * FFmpeg.js for client side video conversion: https://github.com/Kagami/ffmpeg.js
 * ts-ebml for MKV manipulation: https://github.com/legokichi/ts-ebml
