@@ -1,4 +1,4 @@
-# ReproNow - Capture and replay security bugs
+# ReproNow - Capture and Replay security bugs
 An open source tool to capture screen and network instantly helping security engineers reproduce bugs. This is a browser extension to capture Desktop and Network Traffic
 - It has a responsive UI for Security Engineers to view and search requests
 - Hides the traffic inside a mkv/webm video files
