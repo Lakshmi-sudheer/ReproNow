@@ -1,0 +1,280 @@
+<link rel="stylesheet" href="bootstrap.min.css" >
+<script src="jquery-3.2.1.js"></script>
+<!--link rel="stylesheet" type="text/css" href="jquery-ui.min.css"-->
+<script src="popper.min.js"></script>
+<script src="bootstrap.min.js"></script>
+<!--script src="jquery-ui.min.js"></script-->
+<link rel="stylesheet" type="text/css" href="timeline.css">
+<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+<style>
+.body
+{
+
+}
+.headerdata
+{
+	border-left-style: solid;
+    border-color: green;
+    padding-left:10px;
+}
+.formdata
+{
+	border-left-style: solid;
+    border-color: blue;
+    padding-left:10px;
+}
+.nopaddingInitial {
+   padding: 10 !important;
+   margin: 0 !important;
+}
+.nopadding {
+   padding: 10 !important;
+   margin: 0 !important;
+}
+.vid{
+	height: auto; 
+	height: 100%;
+}
+.videoWrapper{
+	height: 100%;
+	width: 100%;
+}
+.TopContent{
+	height: 50%;
+
+}
+.TopContent > [class*='col'] {
+    width: 50%;
+}
+#Timeline{
+	width: 100%;
+	height: 90%;
+	overflow-x:auto;
+	overflow-y:auto;
+	
+}
+.table{
+	word-wrap: break-word;
+	overflow: auto;
+	table-layout: fixed;
+}
+.oversize{
+	word-wrap: break-word;
+}
+.timelinePlayed{
+	
+	background-color: #337ab7;
+	color:white;
+}
+.alert{
+	cursor: pointer;
+}
+.request{
+
+}
+.response{
+	padding-left: 20%;
+}
+.timeNode {
+	cursor: pointer;
+}
+.makeitBold{
+	font-weight: bold;
+}
+.disinline{
+	display:inline;
+
+}
+
+.timeNode .tooltiptext {
+    visibility: hidden;
+    max-width: 500px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 3px 0;
+	padding-left: 5px;
+    padding-right: 5px;
+    display:block;
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 100;
+}
+.topContent .col{
+	resize: both;
+	border: 1px solid;
+	
+}
+
+.BottomContent .row .col{
+	resize: both;
+
+	//border: 1px solid;
+	//border-bottom: 0px;
+	//border-top: 0px;
+}
+.nopadding > .card{
+	min-height:50%;
+}
+.search{
+	position: fixed;
+	right: 0;
+	z-index: 50;
+	font-size: 18px;
+    
+    border-radius: .25rem;
+}
+
+.timeNode:hover .tooltiptext {
+    visibility: visible;
+}
+.rawButton{
+	position: absolute;
+	cursor: pointer;
+	right:0;
+	margin-right: 20px ;
+	margin-top:-5px;
+}
+.curlButton{
+	position: absolute;
+	cursor: pointer;
+	right:0;
+	margin-top:-5px;
+	margin-right: 80px ;
+}
+
+#left_panel{
+	 resize: both;
+    overflow: auto;
+}
+#right_panel{
+	resize: both;
+    overflow: auto;
+}
+.uploadButton{
+	position: absolute;
+	right:290px;
+	background-color: white;
+	cursor: pointer;
+}
+.uploadButton:hover{
+	background-color: #e6e6e6;
+}
+.downloadButton{
+	position: absolute;
+	right:400px;
+	background-color: white;
+	cursor: pointer;
+}
+.downloadButton:hover{
+	background-color: #5cb85c;
+	
+}
+/* layout.css Style */
+.upload-drop-zone {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 36px;
+  left: 0;
+  color: #000;
+  background-color: white;
+  z-index: 200;
+  vertical-align: middle;
+}
+
+/* skin.css Style*/
+.upload-drop-zone {
+  
+  border-style: dashed;
+  border-color: #ccc;
+  line-height: 200px;
+  text-align: center
+}
+.upload-drop-zone.drop {
+  color: #222;
+  border-color: #222;
+}
+.hideit{
+	display:none;
+}
+</style>
+<script src="bundle.js"></script>
+<div id="dropit">
+<div id="message"></div>
+<nav class="navbar navbar-inverse">
+  <!--div style="color:white;">ReproNow</div-->
+  <a href="https://repro-now.com"><img src="Complete_Logo.png" height="20" alt=""></a>
+  <button id="upload" type="file" accept="video/*" class="btn uploadButton"><i class="fa fa-upload" ></i> Upload</button>
+  <input id="vid" type="file" accept=".mkv,.webm" style="display:none">
+  <button id="download" type="button" class="btn downloadButton"><i class="fa fa-download" ></i> Download</button>
+  <input id="inputform" class="search" name="search" placeholder="Search" size="30" type="text" >
+</nav>
+<!--div id="formelements">
+Video: <input id="vid" type="file" accept="video/*"/>
+Json: <input id="json" type="file" />
+
+<button id="formbut">Start</button>
+
+
+
+
+
+</div-->
+<div class="container-fluid">
+	<div id="container" class="row TopContent">
+    <div id="left_panel" class="col nopadding videoWrapper embed-responsive"><video class="vid"  controls></video></div>
+    <div id="right_panel" class="col nopadding">
+	<div id="drag"></div>
+            
+	<ul id="Timeline" class="timeline">
+
+	</ul>
+
+    </div>
+  </div>
+
+</div>
+
+<script src="display.js"></script>
+
+<div class="upload-drop-zone" id="drop-zone">
+            Click <b><i class="fa fa-upload" ></i> Upload</b>  or just drag and drop mkv file here
+</div>
+
+
+<div class="container-fluid BottomContent">
+  
+  <div class="row BottomContent">
+    <div class="col nopadding" style=" overflow: auto;">
+    	<div  class="card">
+	    	<div class="card-header text-center">
+	    		Request
+
+	    	<button type="button" id="ReqRawButton" class="rawButton btn btn-outline-primary btn-sm js-copy" data-toggle="tooltip" data-placement="bottom" data-copy="" title="Copy to clipboard">Raw</button>
+
+	    	<button type="button" id="ReqCurlButton" class="curlButton btn btn-outline-primary btn-sm js-copy" data-toggle="tooltip" data-placement="bottom" data-copy="" title="Copy to clipboard">cURL</button>
+	  		</div>
+    		<div id="reqInfo" class="card-body">
+    
+
+    		</div>
+    	</div>
+    </div>
+    <div class="col nopadding" style="overflow: auto;">
+    	<div  class="card">
+	    	<div class="card-header text-center">
+	    		Response
+	    		<button type="button" id="ResRawButton" class="rawButton btn btn-outline-primary btn-sm js-copy" data-toggle="tooltip" data-placement="bottom" data-copy="" title="Copy to clipboard">Raw</button>
+	  		</div>
+    		<div id="resInfo" class="card-body">
+    
+    		</div>
+    	</div>
+    
+    </div>
+  </div>
+</div>
+</div>
+
