@@ -1,0 +1,27 @@
+{
+  "name": "ReproNow: Capture Screen + Network",
+  "description": "Save time Reproducing and Triaging bugs",
+  "short_name":"ReproNow",
+  "version": "1.4",
+  "manifest_version": 2,
+  "icons": {
+    "16": "ReproNow_Logo.png",
+    "128": "ReproNow_Logo.png"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "browser_action": {
+    "default_icon": "ReproNow_Logo.png",
+    "default_title": "ReproNow",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "unlimitedStorage",
+    "storage",
+    "desktopCapture",
+    "webRequest",
+    "<all_urls>",
+    "tabs"
+  ]
+}
