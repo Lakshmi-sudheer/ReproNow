@@ -4,6 +4,7 @@
     var noJsonFound=false;
     var uploadFileName=null;
     var changeTimeLine=true;
+    var videoEle;
   var URL = window.URL || window.webkitURL
   function Timeline () {};
   var seq_timeline;
@@ -79,6 +80,7 @@
   {
     var videoNode = document.querySelector('video')
     videoNode.src = fileURL;
+    uploadFileName='demo.mkv';
     //hasUploadFile=true;
     console.log(fileURL);
     fetch(fileURL)
@@ -202,6 +204,10 @@
       }, 1000);
       
     }*/
+
+    videoEle = document.querySelector('video')
+    videoEle.addEventListener('timeupdate', playJsonFile, false);
+
   }
   window.onload = init;
   
@@ -210,7 +216,10 @@
     if(uploadFileName!=null)
     {
       //Download from video src
-      chrome.tabs.create({ url: 'download.html?vidobjurl='+document.querySelector('video').src+'&vidFileName='+uploadFileName });
+      if(chrome.tabs)
+        chrome.tabs.create({ url: 'download.html?vidobjurl='+document.querySelector('video').src+'&vidFileName='+uploadFileName });
+      else
+        window.open('download.html?vidobjurl='+document.querySelector('video').src+'&vidFileName='+uploadFileName);
       return;
     }
     if(params.localStorageId)
@@ -270,9 +279,6 @@
       displayResponse(req.get(findCorrectWebRes(currentTime)));
     changeTimeLineHighlight(currentTime,changeTimeLine);
   }
-
-  var videoEle = document.querySelector('video')
-  videoEle.addEventListener('timeupdate', playJsonFile, false);
 
   function displayRequest(webrequest){
     var requestInfo = document.querySelector('#reqInfo');
@@ -573,6 +579,7 @@
   {     
         req= new Map();
         InputReq=JSON.parse(stringjson);
+        seq_timeline=new Array();
         InputReq.forEach( function(i)
         {
           //console.log(i);
@@ -642,6 +649,7 @@
   }
 
   function changeTimeOnSelected(){
+    videoEle.pause();
     videoEle.currentTime=parseFloat(this.getAttribute('time'))+0.0001;
     var time=this.getAttribute('time');
     changeTimeLine=false;
@@ -842,9 +850,9 @@
     for (var key in data) {
     if (data.hasOwnProperty(key)) {
         if(returnText==" -d '")
-          returnText+=key+"="+data[key];
+          returnText+=key+"="+String(data[key]).replace("'", "'\\''");
         else
-          returnText+="&"+key+"="+data[key]
+          returnText+="&"+key+"="+String(data[key]).replace("'", "'\\''");
       }
     }
     return returnText+"'";
