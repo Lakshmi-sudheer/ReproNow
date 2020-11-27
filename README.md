@@ -41,11 +41,6 @@ How to manually Install in Chrome/Opera?
 **Firefox:**
 On Roadmap. Waiting for a [bug](https://bugzilla.mozilla.org/show_bug.cgi?id=1394062) to be fixed by Firefox team.
 
-## Demo
-
-1. Go to https://repro-now.com/previewer/
-2. Click on "Load Demo Video"
-
 ## References
 * How to build Chrome Extension: https://developer.chrome.com/extensions/getstarted
 * FFmpeg.js for client side video conversion: https://github.com/Kagami/ffmpeg.js
